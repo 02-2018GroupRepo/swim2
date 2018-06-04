@@ -16,8 +16,8 @@ class SignUp extends Component{
 
 		const email = document.getElementById('email').value;
 		const password = document.getElementById('pwd').value;
-		const firstName = document.getElementById('firstName').value;
-		const lastName = document.getElementById('lastName').value;
+		const username = document.getElementById('username').value;
+		
 		const role = document.getElementById('role').value;
 	
 		const signupRequest = axios({
@@ -26,8 +26,7 @@ class SignUp extends Component{
 			data: {
 				email,
 				password,
-				firstName,
-				lastName,
+				username,
 				role,
 				
 			}
@@ -59,13 +58,10 @@ class SignUp extends Component{
 	  				<label htmlFor="pwd">Password:</label>
 	  				<input type="password" className="form-control" id="pwd"/>
 	 			</div>
-	 			<div className="form-group">
-	  				<label htmlFor="firstName">First Name:</label>
-	  				<input type="text" className="form-control" id="firstName"/>
-	 			</div>
+	 			
 				<div className="form-group">
-	  				<label htmlFor="lastName">Last Name:</label>
-	  				<input type="text" className="form-control" id="lastName"/>
+	  				<label htmlFor="username">User Name:</label>
+	  				<input type="text" className="form-control" id="username"/>
 	 			</div>
 				<div className="form-group">
 	  				<label htmlFor="role">Role:</label>
