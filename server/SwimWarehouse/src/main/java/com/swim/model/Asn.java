@@ -6,6 +6,7 @@ public class Asn {
 	private String vendorId;
 	private String expectedArrivalDate;
 	private String expectedArrivalTime;
+	private String status;
 
 	// No Args Constructor
 	public Asn() {
@@ -42,6 +43,14 @@ public class Asn {
 
 	public void setExpectedArrivalTime(String expectedArrivalTime) {
 		this.expectedArrivalTime = expectedArrivalTime;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 
