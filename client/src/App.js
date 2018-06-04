@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Homepage from './components/Homepage';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -10,6 +11,8 @@ import axios from 'axios';
 
 
 class App extends Component {
+
+
   _isAuthHandler = (auth=true) => {
     this.setState({
       isAuth: auth
@@ -22,6 +25,7 @@ class App extends Component {
              <div className ="container">
              <Route path='/login' component={(props) => <Login props={props} _isAuthHandler={this._isAuthHandler} /> }/>
               <Route path='/signup' component={(props) => <SignUp props={props} _isAuthHandler={this._isAuthHandler} />} />
+              <Route path='/homepage'  component={Homepage} />
              </div>
              </Router>
     
