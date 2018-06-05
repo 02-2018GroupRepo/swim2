@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import { FormGroup, Col, Panel, Radio } from 'react-bootstrap';
 import $ from 'jquery';
+import NavigationBar from './NavigationBar';
 
 class Homepage extends Component{
 
