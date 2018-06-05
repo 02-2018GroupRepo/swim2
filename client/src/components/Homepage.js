@@ -22,12 +22,8 @@ class Homepage extends Component{
 		    return (
 
 		      <div>
-		         <div className="welcome">
+		        
 
-		    	     Welcome to Integrated Warehouse Management System
-		    	     
-		    	</div>
-		    	
 		         <Panel id="collapsible-panel-example-3" defaultExpanded>
 		          <Panel.Heading>
 		            <Panel.Title>ASN Number</Panel.Title>

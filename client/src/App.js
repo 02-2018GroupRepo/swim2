@@ -5,6 +5,7 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Homepage from './components/Homepage';
 import RecieveASN from './components/RecieveASN';
+import Searchbar from './components/Searchbar';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -26,8 +27,10 @@ class App extends Component {
              <div className ="container">
              <Route path='/login' component={(props) => <Login props={props} _isAuthHandler={this._isAuthHandler} /> }/>
               <Route path='/signup' component={(props) => <SignUp props={props} _isAuthHandler={this._isAuthHandler} />} />
+                 <Route path='/homepage'  component={Searchbar} />
               <Route path='/homepage'  component={Homepage} />
-               <Route path='/recieveasn'  component={RecieveASN} />
+           
+              <Route path='/recieveasn'  component={RecieveASN} />
              </div>
              </Router>
     
