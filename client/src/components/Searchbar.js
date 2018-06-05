@@ -13,8 +13,8 @@ class SearchBar extends Component {
   }
 
   handleGoClick () {
-    if (!this.props.github.isFetchingUser) {
-      this.props.actions.fetchUser(this.state)
+    if (!this.props.homepage.isFetchingAsn) {
+      this.props.actions.fetchAsn(this.state)
     }
   }
 
@@ -25,9 +25,9 @@ class SearchBar extends Component {
           <input
             type='text'
             size='45'
-            placeholder='Enter asn number'
+            placeholder='Enter ASN Number'
             onChange={this.handleSearch.bind(this)}
-            value={this.state.username} />
+            value={this.state.asn} />
           <button
             type='submit'
             onClick={this.handleGoClick.bind(this)}>
