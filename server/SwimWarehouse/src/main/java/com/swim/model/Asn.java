@@ -1,6 +1,8 @@
 package com.swim.model;
 
-public class Asn {
+import java.util.List;
+
+public class Asn{
 
 	private int asnid;
 	private String vendorId;
