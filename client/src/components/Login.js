@@ -11,24 +11,27 @@ class Login extends Component{
 	handlelogin(event){
     event.preventDefault();
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("pwd").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
     const loginRequest = axios({
       method: "POST",
       url: url,
       data: {
-        email,
+        username,
         password
       }
     });
 
     loginRequest.then((loginData)=>{
-    	if(loginData.data.msg === "login success"){
-    		localStorage.setItem('token', loginData.data.token);
+			console.log(loginData);
+    	if (loginData.data.role !== "invalid"){
+    		localStorage.setItem('role', loginData.data.role);
     		this.props._isAuthHandler();
-    		this.props.props.history.push('/');
-    	}
+    		this.props.props.history.push('/homepage');
+    	} else {
+				alert("invalid password");
+			}
     })
 
 }
@@ -40,12 +43,12 @@ render(){
 
 		<form onSubmit ={this.handlelogin}>
 		  <div className="form-group">
-		        <label htmlFor ="email">Email address: </label>
-		        <input type="email" className ="form-control" id ="email"/>
+		        <label htmlFor ="username">username: </label>
+		        <input type="text" className ="form-control" id ="username"/>
 		      </div>
 		   <div className ="form-group">
-		          <label htmlFor ="pwd">Password: </label>
-		        <input type="password" className ="form-control" id ="pwd"/>
+		          <label htmlFor ="password">Password: </label>
+		        <input type="password" className ="form-control" id ="password"/>
 		        </div>
 		   <button type ="submit" className="btn btn-default">Submit</button>
 		   <div className ="signup">
