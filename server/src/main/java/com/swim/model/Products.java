@@ -1,7 +1,7 @@
 package com.swim.model;
 
 public class Products {
-	private int asnid;
+	private int asn;
 	private int serial;
 
 	// No Args Constructor
@@ -10,11 +10,11 @@ public class Products {
 
 	// Getters and Setter
 	public int getAsnid() {
-		return asnid;
+		return asn;
 	}
 
 	public void setAsnid(int asnid) {
-		this.asnid = asnid;
+		this.asn = asn;
 	}
 
 	public int getSerial() {

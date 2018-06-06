@@ -1,9 +1,6 @@
 package com.swim.Dao;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
+import com.swim.model.Asn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -11,7 +8,8 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import com.swim.model.Asn;
+import java.util.HashMap;
+import java.util.List;
 
 @Repository
 public class AsnDao {
@@ -24,12 +22,14 @@ public class AsnDao {
     //Creates an Asn in the DB
     public void createAsn(Asn asn) {
         SqlParameterSource parameterSource = new BeanPropertySqlParameterSource(asn);
-        jdbcTemplate.update("insert into asns values (:asnid, :vendorId, :expectedArrivalDate,:expectedArrivalTime, :status)", parameterSource);
+        System.out.println(asn.getStatus());
+        asn.setSerials(null);
+        jdbcTemplate.update("insert into asns values (:asn, :vendorId, :expectedArrivalDate,:expectedArrivalTime, :status, :serials)", parameterSource);
     }
 
     // Create an Asn method to GET the AsnByID
     public Asn getAsnById(int id) {
-        List<Asn> asnList = jdbcTemplate.query("SELECT * FROM asns WHERE asnId = " + id, new BeanPropertyRowMapper<Asn>(Asn.class));
+        List<Asn> asnList = jdbcTemplate.query("SELECT * FROM asns WHERE asn = " + id, new BeanPropertyRowMapper<Asn>(Asn.class));
         return asnList.get(0);
     }
 
@@ -38,7 +38,7 @@ public class AsnDao {
     public void deleteAnsById(int id) {
         HashMap<String, Integer> testMap = new HashMap<>();
         testMap.put("id", id);
-        jdbcTemplate.update("DELETE FROM asns WHERE asnId = :id ", testMap);
+        jdbcTemplate.update("DELETE FROM asns WHERE asn = :id ", testMap);
 
 
     }
