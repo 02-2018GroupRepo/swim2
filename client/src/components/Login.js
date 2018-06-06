@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import { url } from '../config';
 
 class Login extends Component{
 	constructor(props){
@@ -15,7 +16,7 @@ class Login extends Component{
 
     const loginRequest = axios({
       method: "POST",
-      
+      url: url,
       data: {
         email,
         password
