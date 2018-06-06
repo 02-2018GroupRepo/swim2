@@ -1,2 +1,11 @@
+.classpath
+
+.project
+
+.settings/
+
+application.properties
+
+target/
 *node_modules/*
 *package-lock*
