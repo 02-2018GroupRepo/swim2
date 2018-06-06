@@ -1,26 +1,33 @@
 package com.swim.model;
 
-import java.util.List;
-
 public class Asn{
 
-	private int asnid;
+	private int asn;
 	private String vendorId;
 	private String expectedArrivalDate;
 	private String expectedArrivalTime;
 	private String status;
+	private Products[] serials;
 
 	// No Args Constructor
 	public Asn() {
 	}
-	
-	// Getters and Setter
-	public int getAsnid() {
-		return asnid;
+
+    public Products[] getSerials() {
+        return serials;
+    }
+
+    public void setSerials(Products[] serials) {
+        this.serials = serials;
+    }
+
+    // Getters and Setter
+	public int getAsn() {
+		return asn;
 	}
 
-	public void setAsnid(int asnid) {
-		this.asnid = asnid;
+	public void setAsn(int asn) {
+		this.asn = asn;
 	}
 
 	public String getVendorId() {
