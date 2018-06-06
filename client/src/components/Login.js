@@ -16,7 +16,7 @@ class Login extends Component{
 
     const loginRequest = axios({
       method: "POST",
-      url: url,
+      url: `${url}/login`,
       data: {
         username,
         password
